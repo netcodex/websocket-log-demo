@@ -15,8 +15,8 @@ public class WebsocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
-        registry.enableSimpleBroker("/topic");
-        registry.setApplicationDestinationPrefixes("/app");
+        registry.enableSimpleBroker("/queue");
+        registry.setApplicationDestinationPrefixes("/log");
     }
 
     /**
@@ -25,6 +25,6 @@ public class WebsocketConfig implements WebSocketMessageBrokerConfigurer {
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         // 为了连接安全，setAllowedOrigins设置的允许连接的源地址，如果在非这个配置的地址下发起连接会报403，进一步还可以使用addInterceptors设置拦截器，来做相关的鉴权操作
-        registry.addEndpoint("/websocket").setAllowedOriginPatterns("*").withSockJS().setWebSocketEnabled(true);
+        registry.addEndpoint("/websocket").setAllowedOriginPatterns("*").addInterceptors(new WebsocketLogHandSakeInterceptor()).setHandshakeHandler(new WebsocketLogHandSakeHandler()).withSockJS();
     }
 }

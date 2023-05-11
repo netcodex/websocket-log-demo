@@ -26,9 +26,9 @@
 
         <!--文件会打印出所有信息，这个log每次运行程序会自动清空，由append属性决定，适合临时测试用-->
         <!--注意自定义的标签名要与自定义Appender中的类注解保持一致。-->
-        <WebsocketAppender name="WebsocketAppender" fileName="${FILE_PATH}/test.log" append="false">
-            <PatternLayout pattern="${LOG_PATTERN}"/>
-        </WebsocketAppender>
+<!--        <WebsocketAppender name="WebsocketAppender" fileName="${FILE_PATH}/test.log" append="false">-->
+<!--            <PatternLayout pattern="${LOG_PATTERN}"/>-->
+<!--        </WebsocketAppender>-->
 
         <!-- RollingFile节点用来定义超过指定大小自动删除旧的创建新的的Appender -->
         <!-- 这个会打印出所有的info及以下级别的信息，每次大小超过size，则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩，作为存档-->
@@ -92,10 +92,10 @@
             <AppenderRef ref="Console"/>
         </Logger>
 
-        <logger name="com.lizard.websocket.LoggerDelegate" level="info" additivity="false">
-            <AppenderRef ref="WebsocketAppender"/>
-            <AppenderRef ref="Console"/>
-        </logger>
+<!--        <logger name="com.lizard.websocket.LoggerHandler" level="info" additivity="false">-->
+<!--            <AppenderRef ref="WebsocketAppender"/>-->
+<!--            <AppenderRef ref="Console"/>-->
+<!--        </logger>-->
 
         <!-- Root节点用来指定项目的根日志，如果没有单独指定Logger，那么就会默认使用该Root日志输出-->
         <root level="info">

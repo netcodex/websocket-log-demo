@@ -7,3 +7,4 @@ websocket使用 参照spring官网：[spring-websocket](https://docs.spring.io/s
 2. [Spring Boot整合Log4j2将日志输出至WebSocket](https://juejin.cn/post/7033256065760395295)
 3. [廖雪峰-使用websocket](https://www.liaoxuefeng.com/wiki/1252599548343744/1282384966189089)
 4. [websocket实现服务端消息推送](https://developer.aliyun.com/article/1152737#slide-4)
+5. [向指定用户发送WebSocket消息](https://www.zifangsky.cn/1359.html)
